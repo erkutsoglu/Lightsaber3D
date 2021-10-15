@@ -20,8 +20,8 @@ public class GameController : MonoBehaviour
     public Lightsaber rightLightsaber;
 
     [Header("Particle Settings / Recommended is using only one player's effect!")]
-    public bool leftPlayerHitPartifle;
-    public bool rightPlayerHitPartifle;
+    public bool leftPlayerHitParticle;
+    public bool rightPlayerHitParticle;
 
     private float leftSaberAngle;
     private float rightSaberAngle;
@@ -36,6 +36,8 @@ public class GameController : MonoBehaviour
     [HideInInspector]
     public bool willHit;
 
+    public GameObject vCam;
+
     public void Awake()
     {
         instance = this;
@@ -49,7 +51,7 @@ public class GameController : MonoBehaviour
     public void LightsaberParticleHandler()
     {
         //for leftplayer
-        if (leftPlayerHitPartifle)
+        if (leftPlayerHitParticle)
         {
             leftLightsaber.executeHitParticle = true;
         }
@@ -59,7 +61,7 @@ public class GameController : MonoBehaviour
         }
 
         //for rightplayer
-        if (rightPlayerHitPartifle)
+        if (rightPlayerHitParticle)
         {
             rightLightsaber.executeHitParticle = true;
         }
